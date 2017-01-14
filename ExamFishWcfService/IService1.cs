@@ -12,36 +12,29 @@ namespace ExamFishWcfService
     [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare,
+             UriTemplate = "GetCatch/List")]
+        List<Catch> GetCatches();
 
         [OperationContract]
-        string GetData(int value);
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare,
+             UriTemplate = "GetCatch/{id}")]
+        Catch GetOneCatch(string id);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare,
+             UriTemplate = "PostCatch/")]
+        bool AddCatch(Catch newCatch);
 
-        // TODO: Add your service operations here
-    }
+        [OperationContract]
+        [WebInvoke(Method = "DELETE", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare,
+             UriTemplate = "DeleteCatch/{id}")]
+        bool DeleteCatch(string id);
 
-
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        [OperationContract]
+        [WebInvoke(Method = "PUT", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare,
+             UriTemplate = "PutCatch/{id}")]
+        bool UpdateCatch(string id, Catch myCatch);
     }
 }

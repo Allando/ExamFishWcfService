@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamFishWcfService", "ExamFishWcfService\ExamFishWcfService.csproj", "{B2983435-3F3C-461C-B725-D3068DAEA708}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatchApp", "CatchApp\CatchApp.csproj", "{412718F2-FD58-4F8A-9A49-89B94AB2292B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B2983435-3F3C-461C-B725-D3068DAEA708} = {B2983435-3F3C-461C-B725-D3068DAEA708}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{B2983435-3F3C-461C-B725-D3068DAEA708}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2983435-3F3C-461C-B725-D3068DAEA708}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2983435-3F3C-461C-B725-D3068DAEA708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412718F2-FD58-4F8A-9A49-89B94AB2292B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412718F2-FD58-4F8A-9A49-89B94AB2292B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412718F2-FD58-4F8A-9A49-89B94AB2292B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412718F2-FD58-4F8A-9A49-89B94AB2292B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

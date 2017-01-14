@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:4556/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:4556/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:4556/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ExamFishWcfService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetCatches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatches" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCatches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneCatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneCatch" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOneCatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneCatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddCatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCatch" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddCatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCatch" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCatch" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCatchResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetCatches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCatches" message="tns:IService1_GetCatches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCatchesResponse" message="tns:IService1_GetCatches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneCatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOneCatch" message="tns:IService1_GetOneCatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOneCatchResponse" message="tns:IService1_GetOneCatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddCatch" message="tns:IService1_AddCatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddCatchResponse" message="tns:IService1_AddCatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteCatch" message="tns:IService1_DeleteCatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteCatchResponse" message="tns:IService1_DeleteCatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateCatch" message="tns:IService1_UpdateCatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateCatchResponse" message="tns:IService1_UpdateCatch_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="Service1" />
+</wsdl:definitions>
